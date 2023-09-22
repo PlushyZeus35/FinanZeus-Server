@@ -1,13 +1,23 @@
 const express = require('express');
-const path = require('path')
-
+const path = require('path');
+const sequelize = require('./models/index');
+const bodyParser = require('body-parser');
+require('./models/associations');
 // INITIALIZATIONS
 const app = express();
-
+sequelize.sync( {force: false }).then(async () => {
+    console.log("Conectado a la base de datos!");
+}).catch(error => {
+    console.log("Se ha producido un error!", error);
+    emailController.sendErrorEmail(error);
+});
 
 // SETTINGS
 // Set static path to serve static files
 app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ 
+    extended: true 
+}));
 
 // TEMPLATE ENGINE
 

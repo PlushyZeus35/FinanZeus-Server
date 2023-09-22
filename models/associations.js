@@ -1,0 +1,1 @@
+const Property = require('./property')
