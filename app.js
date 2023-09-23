@@ -9,7 +9,6 @@ sequelize.sync( {force: false }).then(async () => {
     console.log("Conectado a la base de datos!");
 }).catch(error => {
     console.log("Se ha producido un error!", error);
-    emailController.sendErrorEmail(error);
 });
 
 // SETTINGS
@@ -28,5 +27,5 @@ app.use(bodyParser.urlencoded({
 // ROUTES
 app.use(require('./routes'));
 app.use(require('./routes/index'));
-
+app.use('/reental',require('./routes/reental'));
 module.exports = app;
