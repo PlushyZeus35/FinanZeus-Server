@@ -32,23 +32,23 @@ Property.init({
         allowNull: false
     },
     price: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false
     },
     currency: {
         type: DataTypes.STRING,
         defaultValue: 'EUR'
     },
-    APY: {
-        type: DataTypes.DECIMAL,
+    apy: {
+        type: DataTypes.DECIMAL(5,2),
         defaultValue: 0.0
     },
     realAPY: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(5,2),
         defaultValue: 0.0
     },
-    yield: {
-        type: DataTypes.DECIMAL,
+    propertyYield: {
+        type: DataTypes.DECIMAL(5,2),
         defaultValue: 0.0
     },
     startDate: {
