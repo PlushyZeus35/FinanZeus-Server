@@ -14,7 +14,7 @@ Property.init({
         allowNull: false
     },
     description: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT('long')
     },
     url: {
         type: DataTypes.STRING
