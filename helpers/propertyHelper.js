@@ -15,6 +15,8 @@ PropertyHelper.hasCorrectInfo = (property) => {
     if(property.apy) property.apy = parseFloat(property.apy).toFixed(2);
     if(property.price) property.price = parseFloat(property.price).toFixed(2);
     if(property.propertyYield) property.propertyYield = parseFloat(property.propertyYield).toFixed(2);
+    // Parse empty status
+    property.status = property.status==='' ? STATUS_VALUES[0] : property.status;
     return {isCorrect: true, property: property};
 }
 
